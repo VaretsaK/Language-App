@@ -37,6 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'admin_and_moderation.apps.AdminAndModerationConfig',
+    'analytics.apps.AnalyticsConfig',
+    'content_delivery_network.apps.ContentDeliveryNetworkConfig',
+    'content_management.apps.ContentManagementConfig',
+    'exercise_and_quiz.apps.ExerciseAndQuizConfig',
+    'feedback_and_support.apps.FeedbackAndSupportConfig',
+    'gamification.apps.GamificationConfig',
+    'internationalization.apps.InternationalizationConfig',
+    'notification_and_messaging.apps.NotificationAndMessagingConfig',
+    'payment_and_billing.apps.PaymentAndBillingConfig',
+    'progress_tracking.apps.ProgressTrackingConfig',
+    'search_and_recommendation.apps.SearchAndRecommendationConfig',
+    'user_management.apps.UserManagementConfig',
 ]
 
 MIDDLEWARE = [
