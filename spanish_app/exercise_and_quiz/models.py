@@ -1,12 +1,8 @@
 from django.db import models
-from content_management.models import Lessons
-from user_management.models import Users
-
-# Create your models here.
 
 
 class Exercises(models.Model):
-    lesson_id = models.ForeignKey(Lessons, on_delete=models.CASCADE)
+    lesson_id = models.ForeignKey("content_management.Lessons", on_delete=models.CASCADE)
     exercise_type = models.CharField(max_length=64)
     question_text = models.TextField(null=True, blank=True)
     correct_answer = models.CharField(max_length=64)
@@ -15,7 +11,7 @@ class Exercises(models.Model):
 
 
 class UserAnswers(models.Model):
-    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
+    user_id = models.ForeignKey("user_management.Users", on_delete=models.CASCADE)
     exercise_id = models.ForeignKey(Exercises, on_delete=models.CASCADE)
     user_answer = models.CharField(max_length=64)
     is_correct = models.BooleanField()

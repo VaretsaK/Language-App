@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    {% block test %}
+        {% for exercise in exercises%}
+            <div>
+            <p> {{exercise.exercise_type}} </p>
+            <p> {{exercise.question_text}} </p>
+            </div>
+            <hr>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>

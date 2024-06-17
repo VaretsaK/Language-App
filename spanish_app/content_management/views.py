@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from content_management.models import Lessons
 
 
-# Create your views here.
 def content_index(request):
-    return HttpResponse("Content test page.")
+    lessons = Lessons.objects.all()
+    context = {'title': 'Lessons page', 'lessons': lessons}
+    return render(request, 'content_management/lessons.html', context)
+

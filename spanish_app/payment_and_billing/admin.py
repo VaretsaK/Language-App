@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from payment_and_billing.models import Subscriptions
+
+admin.site.register(Subscriptions)
