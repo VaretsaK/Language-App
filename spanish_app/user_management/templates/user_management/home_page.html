@@ -1,22 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
 <body>
-    <h1>{{title}}</h1>
-    {% block test %}
-        <div>
-            <p> {{user.username}} </p>
+    {% block content %}
+        <div class="card">
+            <h5 class="card-header">{{user.username}}</h5>
+              {% for lesson in lessons%}
+                  <div class="card-body">
+                    <h5 class="card-title">{{lesson.lesson_name}}</h5>
+                    <p class="card-text">{{lesson.description}}</p>
+                    <a href="#" class="btn btn-primary">Proceed</a>
+                  </div>
+              {% endfor %}
+
         </div>
-        <hr>
-        {% for lesson in lessons%}
-            <div>
-            <p> {{lesson.lesson_name}} </p>
-            </div>
-            <hr>
-        {% endfor %}
     {% endblock %}
+
 </body>
 </html>
